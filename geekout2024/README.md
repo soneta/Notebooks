@@ -1,0 +1,1 @@
+Notebooki używane podczas konferencji GeekOut 2024
