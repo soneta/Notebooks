@@ -1,0 +1,13 @@
+﻿<Project Sdk="Soneta.Sdk" >
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>false</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Soneta.Test" Version="2406.0.0-alfa.130468" />
+    <PackageReference Include="Soneta.Products.Modules" Version="2406.0.0-alfa.130468" />
+  </ItemGroup>
+
+</Project>
