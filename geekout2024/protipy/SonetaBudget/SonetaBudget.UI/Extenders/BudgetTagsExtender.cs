@@ -5,6 +5,7 @@ using Soneta.Zadania.Budzetowanie;
 using SonetaBudget.Attributes;
 using SonetaBudget.Budget;
 using SonetaBudget.UI.Extenders;
+using SonetaBudget.UI.Helpers;
 
 [assembly: Worker(typeof(BudgetTagsExtender))]
 
@@ -36,9 +37,7 @@ namespace SonetaBudget.UI.Extenders
         }
 
         private NewRowAttribute[] GetNewRows(Session session)
-            => session.GetSonetaBudget().DefBudgetTags.AsQuery()
-                .Where(x => !x.Locked)
-                .OrderBy(x => x.Name)
+            => BudgetTagHelper.GetBudgetTagDefinitions(session)
                 .Select(x => new BudgetTagAttribute(x))
                 .ToArray();
     }
