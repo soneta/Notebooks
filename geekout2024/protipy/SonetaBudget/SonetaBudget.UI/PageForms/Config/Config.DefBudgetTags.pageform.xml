@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataForm
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.enova.pl/schema/form.xsd"
+    xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+    Contexts="License.PRJ"
+    Priority="10" >
+  <Page Name="BudgetTagsPage" CaptionHtml="CRM/Budżetowanie/Definicje tagów" DataContext="{new DefBudgetTagsExtender}">
+      <Grid Width="*" Height="*" EditValue="{Collection}" IsToolbarVisible="true">
+          <Field CaptionHtml="Symbol" Width="15" EditValue="{Symbol}" />
+          <Field CaptionHtml="Nazwa" Width="35" EditValue="{Name}" />
+          <Field CaptionHtml="Zablokowana" Width="10" EditValue="{Locked}" />
+      </Grid>
+  </Page>
+</DataForm>

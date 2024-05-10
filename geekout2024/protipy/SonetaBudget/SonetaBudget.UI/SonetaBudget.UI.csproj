@@ -3,4 +3,7 @@
   <PropertyGroup>
     <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SonetaBudget\SonetaBudget.csproj" />
+  </ItemGroup>
 </Project>
