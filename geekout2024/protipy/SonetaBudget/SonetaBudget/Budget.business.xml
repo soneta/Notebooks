@@ -43,9 +43,9 @@
 	</table>
 
 	<table name="BudgetTag" tablename="BudgetTags" tableCaption="Tagi budżetu" caption="Tagi budżetu" guided="Root" >
-		<col name="Budget" type="BudzetProjektu" keyprimary="true" caption="Budżet projektu" />
-		<col name="Definition" type="DefBudgetTag" required="true" caption="Definicja" />
-		<col name="Description" type="string" length="100" required="true" caption="Opis" />
+		<col name="Budget" type="BudzetProjektu" keyprimary="true" readonly="true" caption="Budżet projektu" />
+		<col name="Definition" type="DefBudgetTag" required="true" readonly="true" caption="Definicja" />
+		<col name="Description" type="string" length="100" required="true" modifier="public virtual" caption="Opis" />
 		<col name="Owner" type="IOwner" required="true" caption="Właściciel" />
 		<col name="CreationDate" type="date" required="true" coption="Data utworzenia" />
 	</table>

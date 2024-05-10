@@ -11,36 +11,17 @@ namespace SonetaBudget.Models.Database
 {
     public class BudgetTag : SonetaBudgetModule.BudgetTagRow
     {
-        //public BudgetTag(BudzetProjektu budget, DefBudgetTag definition)
-        //{
-        //    if (budget is null)
-        //        throw new ArgumentNullException(nameof(budget));
-
-        //    if (definition is null)
-        //        throw new ArgumentNullException(nameof(definition));
-
-        //    Budget = budget;
-        //    Definition = definition;
-        //}
-
-        //public BudgetTag()
-        //{ }
-
-        [Context]
-        public new BudzetProjektu Budget { get; set; }
-
-        [Context]
-        public new DefBudgetTag Definition
+        public BudgetTag(RowCreator creator) : base(creator)
         {
-            get => base.Definition;
-            set => base.Definition = value;
+        }
+
+        public BudgetTag([Required] BudzetProjektu budget, [Required] DefBudgetTag definition) : base(budget, definition)
+        {
         }
 
         protected override void OnAdded()
         {
             base.OnAdded();
-
-            base.Budget = Budget;
 
             Owner = Session.Get(Session.Login.Operator);
             CreationDate = Date.Today;
