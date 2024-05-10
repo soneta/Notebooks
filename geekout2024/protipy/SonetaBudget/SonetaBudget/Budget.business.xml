@@ -16,6 +16,7 @@
 
 	<import>../..</import>
 	<using>Soneta.Zadania.Budzetowanie</using>
+	<using>SonetaBudget.Enums</using>
 	<using>SonetaBudget.Models.Database</using>
 	<using>SonetaBudget.Models.Database.Config</using>
 	
@@ -28,6 +29,7 @@
   <!-- 
   Określa namespaces Microsoft.NET Framework, których identyfikatory są używane przez ten moduł. W tym przypadku pole Dokument odnosi się do obiektu modułu handel DokumentHandlowy. Możliwe jest użycie wielu elementów using.
   -->
+	<enum name="TagType" />
 
 	<table name="DefBudgetTag" tablename="DefBudgetTags" tableCaption="Definicja tagów budżetu" caption="Definicja tagów budżetu" guided="Root" config="true">
 		<key name="BySymbol" keyprimary="true">
@@ -36,6 +38,7 @@
 
 		<col name="Symbol" type="string" length="5" required="true" keyunique="true" caption="Symbol" />
 		<col name="Name" type="string" length="30" required="true" capiton="Nazwa" />
+		<col name="Type" type="TagType" required="true" selector="true" readonly="true" caption="Typ" />
 		<col name="Locked" type="boolean" caption="Zablokowany" />
 	</table>
 

@@ -1,12 +1,20 @@
 ﻿using Soneta.Business;
 using SonetaBudget.Budget;
-using SonetaBudget.Models.Database.Config;
-
-[assembly: NewRow(typeof(DefBudgetTag))]
+using SonetaBudget.Enums;
 
 namespace SonetaBudget.Models.Database.Config
 {
-    public class DefBudgetTag : SonetaBudgetModule.DefBudgetTagRow
+    public abstract class DefBudgetTag : SonetaBudgetModule.DefBudgetTagRow
     {
+        public DefBudgetTag(RowCreator creator) : base(creator)
+        {
+        }
+
+        public DefBudgetTag([Required] TagType type) : base(type)
+        {
+        }
+
+        public override string ToString()
+            => $"[{Symbol}] {Name}";
     }
 }
