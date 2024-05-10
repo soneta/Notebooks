@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Zawiera informację nagłówkową pliku XML oraz informację o użytym kodowaniu znaków. -->
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.enova.pl/schema/business_struct.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/business_struct.xsd"
+ name="SonetaBudget" namespace="SonetaBudget.Budget" versionName="Budget" versionNumber="1">
+  <!-- 
+  Główny element deklarujący nagłówek modułu. 
+  
+  xmlns - wszystkie elementy i atrybuty zostały zadeklarowane w xml-namespace http://www.enova.pl/schema/business_struct.xsd, dlatego konieczne jest użycie atrybutu xmlns, który określa ten właśnie namespace.
+  
+  name - każdy moduł musi posiadać nazwę, która znajduje się w wymaganym atrybucie name. Nazwa ta wykorzystywana jest między innymi do utworzenia odpowiednich nazw dla generowanych klas C#.
+  
+  versionName - kolejnym wymaganym atrybutem jest versionName. Określa nazwę numerów wersji (wersjonowania) pozwalających na automatyczne generowanie konwersji bazy danych z baz utworzonych starszymi wersjami bibliotek. Nazwane numery wersji pozwalają na niezależne prowadzenie projektów i wersjonowanie poszczególnych modułów. Standardowo nazwy wersji to system oraz enova użyte są przez program. Nazwa punktacja pozwala na wersjonowanie modułu niezależnie od wersji głównego programu.
+  
+  versionNumber - atrybut versionNumber określa numer wersji o danej nazwie. Liczba ta powinna być zwiększana zawsze, gdy dokonujemy zmian w module, który został opublikowany publicznie i konieczna będzie konwersja. Taka sama wartość atrybutu versionName może być przypisany wielu modułom. Ale wystarczy, że tylko jeden z nich będzie określał numer wersji atrybutem versionNumber. 
+  -->
+
+	<import>../..</import>
+	<using>Soneta.Zadania.Budzetowanie</using>
+	<using>SonetaBudget.Models.Database</using>
+	<using>SonetaBudget.Models.Database.Config</using>
+	
+  <!-- 
+  Ten atrybut deklaruje folder, w którym będą poszukiwane pozostałe pliki business.xml.
+  Wczytywane są wszystkie pliki ze wskazanego foldera oraz folderów podrzędnych.
+  W tym przypadku uwzględnione zostaną wszystkie deklaracje business.xml w folderze nadrzędnym i jego podrzędnych.
+  -->
+
+  <!-- 
+  Określa namespaces Microsoft.NET Framework, których identyfikatory są używane przez ten moduł. W tym przypadku pole Dokument odnosi się do obiektu modułu handel DokumentHandlowy. Możliwe jest użycie wielu elementów using.
+  -->
+
+	<table name="DefBudgetTag" tablename="DefBudgetTags" tableCaption="Definicja tagów budżetu" caption="Definicja tagów budżetu" guided="Root" config="true">
+		<key name="BySymbol" keyprimary="true">
+			<keycol name="Symbol"/>
+		</key>
+
+		<col name="Symbol" type="string" length="5" required="true" keyunique="true" caption="Symbol" />
+		<col name="Name" type="string" length="30" required="true" capiton="Nazwa" />
+		<col name="Locked" type="boolean" caption="Zablokowany" />
+	</table>
+
+	<table name="BudgetTag" tablename="BudgetTags" tableCaption="Tagi budżetu" caption="Tagi budżetu" guided="Root" >
+		<col name="Budget" type="BudzetProjektu" keyprimary="true" caption="Budżet projektu" />
+		<col name="Definition" type="DefBudgetTag" required="true" caption="Definicja" />
+		<col name="Description" type="string" length="100" required="true" caption="Opis" />
+		<col name="Owner" type="IOwner" required="true" caption="Właściciel" />
+		<col name="CreationDate" type="date" required="true" coption="Data utworzenia" />
+	</table>
+	
+</module>
