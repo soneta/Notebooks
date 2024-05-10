@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<DataForm
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.enova.pl/schema/form.xsd"
+    xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+    DataType="Soneta.Core.IBudzetowany,Soneta.Core"
+    Contexts="License.PRJ"
+    Priority="110" >
+    <Page Name="BudgetTagsPage" CaptionHtml="Budżetowanie/Tagi" DataContext="{new BudgetTagsExtender}" >
+        <Grid Width="*" Height="50" EditValue="{Collection}" IsToolbarVisible="true">
+            <Field CaptionHtml="Symbol" Width="10" EditValue="{Definition.Symbol}" />
+            <Field CaptionHtml="Data utworzenia" Width="15" EditValue="{CreationDate}" />
+            <Field CaptionHtml="Właściciel" Width="30" EditValue="{Owner}" />
+            <Field CaptionHtml="Opis" Width="80" EditValue="{Description}" />
+        </Grid>
+    </Page>
+</DataForm>

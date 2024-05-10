@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm Contexts="License.PRJ" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd">
+  <Flow Name="FilterPanel">
+  </Flow>
+  <Grid Name="List" NewButton="None" EditButton="Visible" RemoveButton="None" IsToolbarVisible="false">
+	  <Field CaptionHtml="Nazwa projektu" Width="16" EditValue="{Projekt.Nazwa}" />
+	  <Field CaptionHtml="Projekt aktywny" Width="16" EditValue="{Projekt.Aktywny}" />
+	  <Field CaptionHtml="Nazwa budżetu" Width="16" EditValue="{Nazwa}" />
+	  <Field CaptionHtml="Stan budżetu" Width="16" EditValue="{Stan}" />
+  </Grid>
+</DataForm>

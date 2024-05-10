@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.enova.pl/schema/form.xsd"
+    xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+    Contexts="License.PRJ"
+    Priority="10">
+  <Page Name="GeneralPage" CaptionHtml="Ogólne" DataContext="{DataSource}">
+    <Group CaptionHtml="Ogólne">
+        <Row>
+            <Field CaptionHtml="Symbol" Width="20" EditValue="{Symbol}" />
+            <Gap Width="*" />
+            <Field CaptionHtml="Zablokowana" Width="8" EditValue="{Locked}" />
+        </Row>
+        <Row>
+            <Field CaptionHtml="Nazwa" EditValue="{Name}" Width="50" />
+        </Row>
+    </Group>
+  </Page>
+</DataForm>
+
