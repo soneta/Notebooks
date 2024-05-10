@@ -9,6 +9,7 @@ using SonetaBudget.Models.Database.Config;
 
 namespace SonetaBudget.Models.Database
 {
+    [SqlResolving(ToStringFields = new[] { "Owner", "Description" })]
     public class BudgetTag : SonetaBudgetModule.BudgetTagRow
     {
         public BudgetTag(RowCreator creator) : base(creator)
